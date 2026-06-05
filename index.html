@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jessica Elston — WA Donor Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F6F3EE;
+    --bg-card: #FDFCFA;
+    --text: #1A2A1C;
+    --text-mid: #4A5E4C;
+    --text-muted: #7A8F7C;
+    --accent: #3D5E38;
+    --accent-light: #E4EDDF;
+    --warm: #A87D56;
+    --warm-light: #F0E8DF;
+    --border: #CDD6C8;
+    --border-warm: #DDD4C8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.75;
+    background: var(--bg);
+    color: var(--text);
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0 1.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 5rem;
+  }
+
+  .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--text);
+  }
+
+  .nav-tag {
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* HERO */
+  .hero {
+    margin-bottom: 5.5rem;
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 0.3rem 0.75rem;
+    border-radius: 2px;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 6vw, 3.4rem);
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    max-width: 520px;
+    line-height: 1.8;
+  }
+
+  /* DIVIDER */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .divider-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--warm);
+  }
+
+  /* SECTION HEADERS */
+  .section-header {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 2.25rem;
+  }
+
+  /* SERVICES */
+  .services {
+    margin-bottom: 5.5rem;
+  }
+
+  .service-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .service-item:first-of-type {
+    border-top: 1px solid var(--border);
+  }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.01em;
+  }
+
+  .service-desc {
+    font-size: 0.93rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    max-width: 480px;
+  }
+
+  .service-potential {
+    display: inline-block;
+    font-size: 0.76rem;
+    font-weight: 400;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    margin-top: 0.75rem;
+    letter-spacing: 0.02em;
+  }
+
+  .service-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text);
+    white-space: nowrap;
+    padding-top: 0.1rem;
+    text-align: right;
+  }
+
+  .service-price span {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+  }
+
+  /* FINE PRINT */
+  .fine-print {
+    background: var(--warm-light);
+    border-left: 2px solid var(--warm);
+    padding: 1rem 1.25rem;
+    margin-bottom: 5.5rem;
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    border-radius: 0 2px 2px 0;
+  }
+
+  /* ABOUT */
+  .about {
+    margin-bottom: 5.5rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+    color: var(--text-mid);
+    line-height: 1.85;
+    margin-bottom: 1rem;
+  }
+
+  .about p:last-child { margin-bottom: 0; }
+
+  .about strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* CONTACT */
+  .contact {
+    margin-bottom: 5rem;
+  }
+
+  .contact-inner {
+    background: var(--accent-light);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2.5rem;
+  }
+
+  .contact h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+
+  .contact p {
+    font-size: 0.93rem;
+    color: var(--text-mid);
+    margin-bottom: 1.5rem;
+    max-width: 400px;
+  }
+
+  .contact a {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--bg-card);
+    background: var(--accent);
+    padding: 0.7rem 1.5rem;
+    border-radius: 2px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: background 0.15s ease;
+  }
+
+  .contact a:hover {
+    background: var(--text);
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .footer-leaf {
+    color: var(--accent);
+    font-size: 1rem;
+  }
+
+  /* ORGANIC ACCENTS */
+  .organic-mark {
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: var(--warm);
+    border-radius: 1px;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 520px) {
+    body { padding: 0 1.25rem; }
+    nav { margin-bottom: 3.5rem; }
+    .hero { margin-bottom: 4rem; }
+    .service-item { grid-template-columns: 1fr; gap: 0.75rem; }
+    .service-price { text-align: left; }
+    .contact-inner { padding: 1.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Jessica Elston</span>
+  <span class="nav-tag">Washington State</span>
+</nav>
+
+<section class="hero">
+  <span class="hero-label">Progressive Campaigns Only</span>
+  <h1>Donor research that helps <em>good people</em> raise real money.</h1>
+  <p>I do the research. You make the asks. Washington state donor intelligence, built from public data resources, cross-referenced and ready to use.</p>
+</section>
+
+<section class="services">
+  <p class="section-header">Services</p>
+
+  <div class="service-item">
+    <div>
+      <p class="service-name">Single Call Sheet</p>
+      <p class="service-desc">One verified donor profile. Giving history, context, and a clear action note.</p>
+      <span class="service-potential">Estimated $250 to $1,200 in callable donor capacity</span>
+    </div>
+    <div class="service-price">$50</div>
+  </div>
+
+  <div class="service-item">
+    <div>
+      <p class="service-name">Starter Bundle</p>
+      <p class="service-desc">10 profiles sourced from my WA donor vault plus fresh research.</p>
+      <span class="service-potential">Estimated $5,000 to $15,000 in callable donor capacity</span>
+    </div>
+    <div class="service-price">$350</div>
+  </div>
+
+  <div class="service-item">
+    <div>
+      <p class="service-name">Full Prospecting Package</p>
+      <p class="service-desc">25+ profiles with deep sourcing for competitive House and Senate races.</p>
+      <span class="service-potential">Estimated $25,000 to $75,000+ in callable donor capacity</span>
+    </div>
+    <div class="service-price">$1,500</div>
+  </div>
+
+  <div class="service-item">
+    <div>
+      <p class="service-name">Hourly Research</p>
+      <p class="service-desc">Opposition research, candidate vetting, custom donor sourcing, district intelligence, and more.</p>
+    </div>
+    <div class="service-price">$75 <span>per hour</span></div>
+  </div>
+</section>
+
+<div class="fine-print">
+  All packages identify estimated ask potential based on public data resources. This is research, not a guarantee of funds raised.
+</div>
+
+<section class="about">
+  <p class="section-header">About</p>
+  <div class="organic-mark"></div>
+  <p>I have spent 15 years in data and research. Now I am putting that into campaigns and organizations working toward a better Washington.</p>
+  <p>I work exclusively with <strong>progressive campaigns and organizations</strong>. If you are trying to build a better world and you need to fund the work to do it, I want to help.</p>
+</section>
+
+<section class="contact">
+  <div class="contact-inner">
+    <h2>Let's talk.</h2>
+    <p>Tell me your district, your timeline, and what you need. I will tell you what I can do.</p>
+    <a href="mailto:jessicanelston@gmail.com">jessicanelston@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  <p>Jessica Elston &mdash; Washington State Donor Intelligence</p>
+  <p class="footer-leaf">&#9752;</p>
+</footer>
+
+</body>
+</html>
